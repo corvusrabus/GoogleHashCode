@@ -1,7 +1,30 @@
 
                     
 if __name__ == '__main__':
-    t = int(input())
+    first_line = input().split()
+    T4 = first_line.pop()
+    T3 = first_line.pop()
+    T2 = first_line.pop()
+    M = first_line.pop()
 
-    for t_itr in range(t):
-        print("Case #{}: ".format(t_itr + 1) + match_patterns())
+    ingredients = set()
+    pizzas = []
+    for i in range(M) :
+        cur_ingredients = input().split()
+        cur_ingredients.pop(0)
+        for x in cur_ingredients :
+            ingredients.add(x)
+        pizzas.append(cur_ingredients)
+    
+    ingredient_to_number = {}
+    number_to_ingredient = {}
+
+    counter = 0
+    for ingredient in ingredients :
+        number_to_ingredient[counter] = ingredient
+        ingredient_to_number[ingredient] = counter
+        counter += 1
+    
+    for i in range(len(pizzas)) :
+        pizzas[i] = list(map(lambda x : ingredient_to_number[x]), pizzas[i])
+        
