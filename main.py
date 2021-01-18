@@ -1,7 +1,7 @@
 
                     
 if __name__ == '__main__':
-    first_line = input().split()
+    first_line = list(map(int,input().split()))
     T4 = first_line.pop()
     T3 = first_line.pop()
     T2 = first_line.pop()
@@ -26,5 +26,7 @@ if __name__ == '__main__':
         counter += 1
     
     for i in range(len(pizzas)) :
-        pizzas[i] = list(map(lambda x : ingredient_to_number[x]), pizzas[i])
-        
+        pizzas[i] = list(map(lambda x : ingredient_to_number[x], pizzas[i]))
+    del ingredient_to_number
+
+    
