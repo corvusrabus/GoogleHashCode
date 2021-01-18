@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 from scoring import score
+=======
+path = 'data/a_example'
+
+def parse_first_line(file):
+    first_line = file.readlines()[0]
+    M, T2, T3, T4 = first_line.split( )
+    return M, T2, T3, T4
+
+>>>>>>> 378b4fe0fce347f45d2609c9f2c6f3b126e9c389
 
 if __name__ == '__main__':
     first_line = list(map(int,input().split()))
