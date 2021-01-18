@@ -1,3 +1,4 @@
+from scoring import score
 path = 'data/a_example'
 
 def parse_first_line(file):
@@ -36,5 +37,10 @@ if __name__ == '__main__':
     for i in range(len(pizzas)) :
         pizzas[i] = list(map(lambda x : ingredient_to_number[x], pizzas[i]))
     del ingredient_to_number
+    del ingredients
+
+    # # test scoring function
+    # allocation = [[1,4], [0,2,3], []]
+    # result = score(allocation,pizzas,T2,T3, T4)
 
     
