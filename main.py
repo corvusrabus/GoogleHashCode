@@ -3,9 +3,10 @@ path = 'data/a_example'
 def parse_first_line(file):
     first_line = file.readline()
     M, T2, T3, T4 = first_line.split( )
+    M, T2, T3, T4 = int(M), int(T2), int(T3), int(T4)
     return M, T2, T3, T4
 
- 
+
 
 if __name__ == '__main__':
     first_line = list(map(int,input().split()))
