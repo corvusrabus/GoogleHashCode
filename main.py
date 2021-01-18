@@ -1,5 +1,5 @@
+from scoring import score
 
-                    
 if __name__ == '__main__':
     first_line = list(map(int,input().split()))
     T4 = first_line.pop()
@@ -28,5 +28,10 @@ if __name__ == '__main__':
     for i in range(len(pizzas)) :
         pizzas[i] = list(map(lambda x : ingredient_to_number[x], pizzas[i]))
     del ingredient_to_number
+    del ingredients
+
+    # # test scoring function
+    # allocation = [[1,4], [0,2,3], []]
+    # result = score(allocation,pizzas,T2,T3, T4)
 
     
