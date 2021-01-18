@@ -10,20 +10,15 @@ def parse_first_line(file):
 
 
 if __name__ == '__main__':
-    first_line = list(map(int,input().split()))
-    T4 = first_line.pop()
-    T3 = first_line.pop()
-    T2 = first_line.pop()
-    M = first_line.pop()
-
-    ingredients = set()
-    pizzas = []
-    for i in range(M) :
-        cur_ingredients = input().split()
-        cur_ingredients.pop(0)
-        for x in cur_ingredients :
-            ingredients.add(x)
-        pizzas.append(cur_ingredients)
+    with open(path) as file:
+        M, T2, T3, T4 = parse_first_line(file)
+        ingredients = set()
+        pizzas = []
+        lines = file.readlines()
+        for line in lines[1:]:
+            cur_ingredients = line.split()[1:]
+            ingredients.update(cur_ingredients)
+            pizzas.append(cur_ingredients) # TODO why are we doing this?
     
     ingredient_to_number = {}
     number_to_ingredient = {}
